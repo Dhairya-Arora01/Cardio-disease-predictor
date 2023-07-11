@@ -4,9 +4,12 @@ import copy
 import pickle
 import pandas as pd
 import json
+from flask_cors import CORS
 
 app = Flask(__name__)
 api = Api(app)
+
+CORS(app)
 
 with open('model_pickle', 'rb') as f:
     our_model = pickle.load(f)
@@ -76,7 +79,7 @@ def value_to_class(input_received_request):
 def predict_result(input_recieved):
 
     df = pd.DataFrame(input_recieved, index=[0])
-    prediction = our_model.predict(df)
+    prediction = our_model.predict_proba(df)
 
     return prediction
 
@@ -95,7 +98,7 @@ class Predictor(Resource):
 
         print(prediction)
 
-        return json.dumps({"cardio": prediction[0]}, default=str), 200
+        return json.dumps(dict({"cardio": prediction[0][1]}), indent=4), 200
 
 api.add_resource(Predictor, "/predict")
 
