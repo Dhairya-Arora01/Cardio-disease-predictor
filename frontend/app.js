@@ -1,74 +1,117 @@
 const board_comp = Vue.component('board',{
 
     template: `
-    <div id="board">
-    <h1>Board Component</h1>
-    <p>Age</p>
-    <input type="number" placeholder="age" id="age" v-model="age">
-    <p>Gender</p>
-    <input type="radio" id="male" value="Male" v-model="gender">
-    <label for="male">Male</label>
-    <input type="radio" id="female" value="Female" v-model="gender">
-    <label for="female">Female</label>
-    <br>
-    <p>Height</p>
-    <input type="number" placeholder="height" id="height" v-model="height">
-    <p>Weight</p>
-    <input type="number" placeholder="weight" id="weight" v-model="weight">
-    <p>Systolic Pressure</p>
-    <input type="number" placeholder="Systolic Pressure" id="ap_hi" v-model="ap_hi">
-    <p>Diastolic Pressure</p>
-    <input type="number" placeholder="Diastolic Pressure" id="ap_lo" v-model="ap_lo">
-    <p>Cholestrol</p>
-    <input type="number" placeholder="Cholesterol" id="cholesterol" v-model="cholesterol">
-    <p>Glucose</p>
-    <input type="number" placeholder="Glucose" id="gluc" v-model="gluc">
-
-    <p>Smoke</p>
-    <input type="radio" id="yes" value="Yes" v-model="smoke">
-    <label for="yes">Yes</label>
-    <input type="radio" id="no" value="No" v-model="smoke">
-    <label for="no">No</label>
-
-    <p>Alcohol</p>
-    <input type="radio" id="yes" value="Yes" v-model="alco">
-    <label for="yes">Yes</label>
-    <input type="radio" id="no" value="No" v-model="alco">
-    <label for="no">No</label>
-
-    <p>Active</p>
-    <input type="radio" id="yes" value="Yes" v-model="active">
-    <label for="yes">Yes</label>
-    <input type="radio" id="no" value="No" v-model="active">
-    <label for="no">No</label>
-
-
-    <hr>
-
-    <button v-on:click="submit">Submit</button>
-
-    <hr>
-    <div id="result">
-        <h2>{{ probability }}%<h2>
-    </div>
-
     <div>
+    <header class="titlebar">
+            <span class="name">Cardio-B</span>
+    </header>
+
+    <section class="intro">
+        <div class="text">
+            <span class="title">Is your heart at risk ?</span>
+            <p class="para">Check with our Cardio disease predictor now ! <br><span id="warning">*Our predictor is only 73% accurate, please seek medical help.</span></p>
+        </div>
+        <div class="gify">
+            <img src="./images/heart.png" class="vert-move" style="width: 85%;height: auto;">
+        </div>
+    </section>
+
+    <p class="lorem">Every year, millions of people around the world are affected by cardiovascular disease, making it one of the leading causes of death and disability. This group of disorders, including heart attacks, strokes, and coronary artery disease, poses a significant threat to our overall well-being. Cardiovascular disease is often influenced by a combination of factors, such as unhealthy lifestyle choices, genetic predisposition, high blood pressure, high cholesterol levels, obesity, and diabetes.The impact of cardiovascular disease extends beyond the physical realm, affecting individuals, families, and communities alike. It not only jeopardizes the quality of life but also places a tremendous burden on healthcare systems, straining resources and causing significant economic implications. The importance of prevention and early detection cannot be emphasized enough, as many risk factors are modifiable through lifestyle changes and proper management.
+    </p>
+
+    <section class="form">
+        <div class="contactform">
+            <h2>ENTER YOUR DETAILS</h2>
+            <div class="formbox">
+                <div class="inputbox w50">
+                    <input type="number" required v-model="age">
+                    <span>Age</span>
+                </div>
+                <div class="inputbox_select">
+                    <span class="radio">Gender</span>
+                    <input type="radio" name="gender_selection" value="Male" required v-model="gender">
+                    <label for="Male">Male</label>
+                    <input type="radio" name="gender_selection" value="Female" required v-model="gender">
+                    <label for="Female">Female</label>
+                </div>
+                <div class="inputbox w50">
+                    <input type="number" required v-model="height">
+                    <span>Height (cm)</span>
+                </div>
+                <div class="inputbox w50">
+                    <input type="number" required v-model="weight">
+                    <span>Weight (Kg)</span>
+                </div>
+                <div class="inputbox_select">
+                    <span class="radio">Do you smoke ?</span>
+                    <input type="radio" name="smoke_selection" value="Yes" required v-model="smoke">
+                    <label for="Yes">Yes</label>
+                    <input type="radio" name="smoke_selection" value="No" required v-model="smoke">
+                    <label for="No">No</label>
+                </div>
+                <div class="inputbox w50">
+                    <input type="number" required v-model="ap_hi">
+                    <span>Systolic pressure (mmHg)</span>
+                </div>
+                <div class="inputbox w50">
+                    <input type="number" required v-model="ap_lo">
+                    <span>Diastolic pressure (mmHg)</span>
+                </div>
+                <div class="inputbox_select">
+                    <span class="radio">Do you drink alcohol ?</span>
+                    <input type="radio" name="alcohol_selection" value="Yes" required v-model="alco">
+                    <label for="Yes">Yes</label>
+                    <input type="radio" name="alcohol_selection" value="No" required v-model="alco">
+                    <label for="No">No</label>
+                </div>
+                <div class="inputbox w50">
+                    <input type="number" required v-model="cholesterol">
+                    <span>Cholesterol (mg/dL)</span>
+                </div>
+                <div class="inputbox w50">
+                    <input type="number" required v-model="gluc">
+                    <span>Glucose (mg/dL)</span>
+                </div>
+                <div class="inputbox_select">
+                    <span class="radio">Are you active ?</span>
+                    <input type="radio" name="active_selection" value="Yes" required v-model="active">
+                    <label for="Yes">Yes</label>
+                    <input type="radio" name="active_selection" value="No" required v-model="active">
+                    <label for="No">No</label>
+                </div>
+
+                <h2>Probability : {{ probability }}%</h2>
+
+                <div class="inputbox w50">
+                    <input id="submit" type="button" v-on:click="submit" value="Submit" />
+                </div>
+
+                <!-- <p> Chance for disease: <span id="displaymessage"></span></p> -->
+
+            </div>
+        </div>
+    </section>
+
+    <div class="copyright">
+        <p>Copyright &copy Dhairya, Aryan & Harsh . All Rights Reserved</p>
+    </div>
+    </div>
     `,
 
     data: function(){
         return {
 
-            age: 0,
-            gender: "Male",
-            height: 0,
-            weight: 0,
-            ap_hi: 0,
-            ap_lo: 0,
-            cholesterol: 0,
-            gluc: 0,
-            smoke: "No",
-            alco: "No",
-            active: "Yes",
+            age: null,
+            gender: null,
+            height: null,
+            weight: null,
+            ap_hi: null,
+            ap_lo: null,
+            cholesterol: null,
+            gluc: null,
+            smoke: null,
+            alco: null,
+            active: null,
             probability: 0
 
         }
@@ -117,7 +160,7 @@ const board_comp = Vue.component('board',{
 
             console.log(payload)
 
-            const res = await fetch('http://127.0.0.1:5000/predict', {
+            const res = await fetch('168.61.20.95:5000/predict', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -130,7 +173,8 @@ const board_comp = Vue.component('board',{
             data = JSON.parse(json_data)
             console.log(data)
             console.log(data['cardio'])
-            this.probability = data['cardio']*100
+            this.probability = Number(data['cardio']*100).toFixed(2)
+
         }
 
     }

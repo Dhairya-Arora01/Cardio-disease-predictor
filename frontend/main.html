@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Almarai:wght@400;700&family=Bebas+Neue&family=DM+Serif+Display&family=Inter&display=swap" rel="stylesheet">
+    <title>Cardio_B</title>
+    <script type="text/javascript">
+        function showmessage(){
+            var message = document.getElementById("message").value;
+            displaymessage.innerHTML = message;
+        }
+    </script>
+</head>
+<body>
+    
+    <header class="titlebar">
+            <span class="name">Cardio-B</span>
+    </header>
+
+    <section class="intro">
+        <div class="text">
+            <span class="title">Is your heart at risk ?</span>
+            <p class="para">Check with our Cardio disease predictor now ! <br><span id="warning">*Our predictor is only 73% accurate, please seek medical help.</span></p>
+        </div>
+        <div class="gify">
+            <img src="./images/heart.png" class="vert-move" style="width: 85%;height: auto;">
+        </div>
+    </section>
+
+    <p class="lorem">Every year, millions of people around the world are affected by cardiovascular disease, making it one of the leading causes of death and disability. This group of disorders, including heart attacks, strokes, and coronary artery disease, poses a significant threat to our overall well-being. Cardiovascular disease is often influenced by a combination of factors, such as unhealthy lifestyle choices, genetic predisposition, high blood pressure, high cholesterol levels, obesity, and diabetes.The impact of cardiovascular disease extends beyond the physical realm, affecting individuals, families, and communities alike. It not only jeopardizes the quality of life but also places a tremendous burden on healthcare systems, straining resources and causing significant economic implications. The importance of prevention and early detection cannot be emphasized enough, as many risk factors are modifiable through lifestyle changes and proper management.
+    </p>
+
+    <section class="form">
+        <div class="contactform">
+            <h2>ENTER YOUR DETAILS</h2>
+            <div class="formbox">
+                <div class="inputbox w50">
+                    <input type="number" required>
+                    <span>Age</span>
+                </div>
+                <div class="inputbox_select">
+                    <span class="radio">Gender</span>
+                    <input type="radio" name="gender_selection" value="Male" required>
+                    <label for="Male">Male</label>
+                    <input type="radio" name="gender_selection" value="Female" required>
+                    <label for="Female">Female</label>
+                </div>
+                <div class="inputbox w50">
+                    <input type="number" required>
+                    <span>Height (cm)</span>
+                </div>
+                <div class="inputbox w50">
+                    <input type="number" required>
+                    <span>Weight (Kg)</span>
+                </div>
+                <div class="inputbox_select">
+                    <span class="radio">Do you smoke ?</span>
+                    <input type="radio" name="gender_selection" value="Yes" required>
+                    <label for="Yes">Yes</label>
+                    <input type="radio" name="gender_selection" value="No" required>
+                    <label for="No">No</label>
+                </div>
+                <div class="inputbox w50">
+                    <input type="number" required>
+                    <span>Systolic pressure (mmHg)</span>
+                </div>
+                <div class="inputbox w50">
+                    <input type="number" required>
+                    <span>Diastolic pressure (mmHg)</span>
+                </div>
+                <div class="inputbox_select">
+                    <span class="radio">Do you drink alcohol ?</span>
+                    <input type="radio" name="gender_selection" value="Yes" required>
+                    <label for="Yes">Yes</label>
+                    <input type="radio" name="gender_selection" value="No" required>
+                    <label for="No">No</label>
+                </div>
+                <div class="inputbox w50">
+                    <input type="number" required>
+                    <span>Cholesterol (mg/dL)</span>
+                </div>
+                <div class="inputbox w50">
+                    <input type="number" required>
+                    <span>Glucose (mg/dL)</span>
+                </div>
+                <div class="inputbox_select">
+                    <span class="radio">Are you active ?</span>
+                    <input type="radio" name="gender_selection" value="Yes" required>
+                    <label for="Yes">Yes</label>
+                    <input type="radio" name="gender_selection" value="No" required>
+                    <label for="No">No</label>
+                </div>
+                <div class="inputbox w50">
+                    <input id="submit" type="button" onclick="showmessage()" value="Submit" />
+                </div>
+
+                <!-- <p> Chance for disease: <span id="displaymessage"></span></p> -->
+
+            </div>
+        </div>
+    </section>
+
+    <div class="copyright">
+        <p>Copyright &copy Dhairya, Aryan & Harsh . All Rights Reserved</p>
+    </div>
+
+</body>
+</html>
