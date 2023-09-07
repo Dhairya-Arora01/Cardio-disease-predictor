@@ -1,10 +1,25 @@
-# Cardiovascular Disease Prediction Project
+# [Cardiovascular Disease Prediction Project](http://168.61.20.95)
 
 ![Cardiovascular Disease](https://i.imgur.com/kgu7nKj.gif)
 
 This project is a web application that predicts the probability of cardiovascular disease based on simple features such as age, height, weight, gender, blood pressure, blood glucose level, etc. It utilizes a machine learning model trained on a dataset to make accurate predictions.
 
 You can access the live version of this project at [168.61.20.95](http://168.61.20.95).
+
+## Industry
+Health
+
+## Project Title
+Cardio-disease Predictor
+
+## Project Statement/Opportunity
+Predicting probability of a person having cardiovascular disease. We have deployed the application on Azure Cloud Platform. The application takes features like age, weight, bp etc. as inputs and then predicts the probability of a person to have cardiovascular disease as output.
+
+## Project Description
+Cardiovascular diseases are a leading cause of global mortality, underscoring the importance of awareness and proactive health management. That's why we have built this application so that a person can check his probability of having cardiovascular disease and then can take appropriate actions in order to prevent it like regular exercise, healthy diet etc. We have built this web app using HTML, CSS, Vue, Flask, Docker, scikit-learn, Terraform and Azure Technologies like Linux Virutal Machines, Virtual Network (can be seen [here](https://github.com/Dhairya-Arora01/Cardio-disease-predictor/blob/bb46a482328306e785741bafff1d75e7c081deca/infra/main.tf#L21))
+
+## Primary Azure Technologies Used
+Linux Virtual Machines, Virtual Network
 
 ## Tech Stack
 
@@ -24,33 +39,6 @@ The project is built using the following technologies:
 - ML
   - Logistic Regression implemented using Scikit-learn
 
-## How to Use
-
-To use the web application, follow these steps:
-
-1. Visit [168.61.20.95](http://168.61.20.95) in your web browser.
-
-2. You will be presented with an intuitive user interface to enter the required input features for prediction.
-
-3. Fill in the details such as age, height, weight, gender, blood pressure, blood glucose level, etc.
-
-4. Click on the "Predict" button to initiate the prediction process.
-
-5. The system will use the machine learning model to calculate the probability of cardiovascular disease based on the provided information.
-
-6. The predicted result will be displayed on the screen along with an explanation.
-
-## Dataset and Machine Learning Model
-
-The dataset used to train the machine learning model can be found at [Cardio-dataset-kaggle](https://www.kaggle.com/datasets/sulianova/cardiovascular-disease-dataset). However, you can find and use a suitable dataset to train your own model. The model should be saved and loaded by the backend to make predictions.
-
-## Contributing
-
-Contributions to this project are welcome! If you find any bugs, have suggestions for improvements, or want to add new features, please feel free to create a pull request.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
 
 ## Contact
 
