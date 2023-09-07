@@ -38,7 +38,10 @@ The project is built using the following technologies:
 
 - ML
   - Logistic Regression implemented using Scikit-learn
+    
+<hr></hr>
 
+![Cardio-ss](https://i.imgur.com/rkZG7gT.png)
 
 ## Contact
 
