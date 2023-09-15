@@ -43,6 +43,10 @@ The project is built using the following technologies:
 
 ![Cardio-ss](https://i.imgur.com/rkZG7gT.png)
 
+## Azure Technologies Used screenshots
+![Web-vnet](https://i.imgur.com/v0guAkF.png)
+![Web-rg](https://i.imgur.com/yvQhtB3.png)
+
 ## Contact
 
 If you have any questions or need further assistance, please contact the project owner at `dhairyarora0208in@gmail.com`.
